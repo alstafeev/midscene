@@ -45,8 +45,15 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
 
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '21'
+        cache: 'maven'
+
     - name: Build project
-      run: pnpm run build
+      run: ./mvnw -B compile
     
     - name: Run evaluation
       run: |

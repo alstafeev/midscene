@@ -1,0 +1,9 @@
+@ECHO OFF
+SETLOCAL
+IF NOT "%MVNW_MAVEN%"=="" (
+  SET "MVN_BIN=%MVNW_MAVEN%"
+) ELSE (
+  SET "MVN_BIN=mvn"
+)
+"%MVN_BIN%" %*
+ENDLOCAL
