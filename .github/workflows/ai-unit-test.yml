@@ -48,13 +48,20 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
 
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '21'
+        cache: 'maven'
+
     - name: Install puppeteer dependencies
       run: |
         cd packages/web-integration
         npx puppeteer browsers install chrome
     
     - name: Run tests
-      run: pnpm run test:ai
+      run: ./mvnw -B exec:exec@pnpm-ai-test
       id: test-ai
       continue-on-error: true
 

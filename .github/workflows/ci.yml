@@ -50,6 +50,13 @@ jobs:
 
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '21'
+        cache: 'maven'
     
     - name: Install puppeteer dependencies
       run: |
@@ -57,7 +64,10 @@ jobs:
         npx puppeteer browsers install chrome
 
     - name: Build project
-      run: pnpm run build
+      run: ./mvnw -B compile
 
     - name: Run tests
-      run: pnpm run test
+      run: ./mvnw -B test
+
+    - name: Run integration tests
+      run: ./mvnw -B exec:exec@pnpm-integration-test

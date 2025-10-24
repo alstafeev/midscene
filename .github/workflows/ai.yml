@@ -58,6 +58,13 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
 
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '21'
+        cache: 'maven'
+
     - name: Install Playwright dependencies
       run: |
         cd packages/web-integration
@@ -73,7 +80,7 @@ jobs:
         npx puppeteer browsers install chrome
     
     - name: Run e2e tests
-      run: pnpm run e2e
+      run: ./mvnw -B exec:exec@pnpm-integration-test
       id: e2e-tests
       continue-on-error: true
 
@@ -86,7 +93,7 @@ jobs:
         if-no-files-found: ignore
       
     - name: Run e2e tests cache
-      run: pnpm run e2e:cache
+      run: ./mvnw -B exec:exec@pnpm-integration-test-cache
       id: e2e-tests-cache
       continue-on-error: true
 
@@ -99,7 +106,7 @@ jobs:
         if-no-files-found: ignore
 
     - name: Run e2e tests report
-      run: pnpm run e2e:report
+      run: ./mvnw -B exec:exec@pnpm-integration-test-report
       id: e2e-tests-report
       continue-on-error: true
 
