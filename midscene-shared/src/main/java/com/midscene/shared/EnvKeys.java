@@ -1,0 +1,310 @@
+package com.midscene.shared;
+
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * Constants that mirror the env key declarations from the TypeScript shared package.
+ */
+public final class EnvKeys {
+    private EnvKeys() {}
+
+    public static final String MIDSCENE_OPENAI_INIT_CONFIG_JSON = "MIDSCENE_OPENAI_INIT_CONFIG_JSON";
+    public static final String MIDSCENE_MODEL_NAME = "MIDSCENE_MODEL_NAME";
+    public static final String MIDSCENE_LANGSMITH_DEBUG = "MIDSCENE_LANGSMITH_DEBUG";
+    public static final String MIDSCENE_DEBUG_AI_PROFILE = "MIDSCENE_DEBUG_AI_PROFILE";
+    public static final String MIDSCENE_DEBUG_AI_RESPONSE = "MIDSCENE_DEBUG_AI_RESPONSE";
+    public static final String MIDSCENE_DANGEROUSLY_PRINT_ALL_CONFIG = "MIDSCENE_DANGEROUSLY_PRINT_ALL_CONFIG";
+    public static final String MIDSCENE_DEBUG_MODE = "MIDSCENE_DEBUG_MODE";
+    public static final String MIDSCENE_MCP_USE_PUPPETEER_MODE = "MIDSCENE_MCP_USE_PUPPETEER_MODE";
+    public static final String MIDSCENE_MCP_CHROME_PATH = "MIDSCENE_MCP_CHROME_PATH";
+    public static final String MIDSCENE_MCP_ANDROID_MODE = "MIDSCENE_MCP_ANDROID_MODE";
+    public static final String DOCKER_CONTAINER = "DOCKER_CONTAINER";
+    public static final String MIDSCENE_FORCE_DEEP_THINK = "MIDSCENE_FORCE_DEEP_THINK";
+    public static final String MIDSCENE_RUN_DIR = "MIDSCENE_RUN_DIR";
+    public static final String MIDSCENE_CACHE = "MIDSCENE_CACHE";
+    public static final String MIDSCENE_REPORT_TAG_NAME = "MIDSCENE_REPORT_TAG_NAME";
+    public static final String MIDSCENE_CACHE_MAX_FILENAME_LENGTH = "MIDSCENE_CACHE_MAX_FILENAME_LENGTH";
+    public static final String MIDSCENE_REPLANNING_CYCLE_LIMIT = "MIDSCENE_REPLANNING_CYCLE_LIMIT";
+    public static final String MIDSCENE_PREFERRED_LANGUAGE = "MIDSCENE_PREFERRED_LANGUAGE";
+    public static final String MIDSCENE_ANDROID_IME_STRATEGY = "MIDSCENE_ANDROID_IME_STRATEGY";
+    public static final String MIDSCENE_ADB_PATH = "MIDSCENE_ADB_PATH";
+    public static final String MIDSCENE_ADB_REMOTE_HOST = "MIDSCENE_ADB_REMOTE_HOST";
+    public static final String MIDSCENE_ADB_REMOTE_PORT = "MIDSCENE_ADB_REMOTE_PORT";
+    public static final String MIDSCENE_IOS_DEVICE_UDID = "MIDSCENE_IOS_DEVICE_UDID";
+    public static final String MIDSCENE_IOS_SIMULATOR_UDID = "MIDSCENE_IOS_SIMULATOR_UDID";
+    public static final String MIDSCENE_OPENAI_SOCKS_PROXY = "MIDSCENE_OPENAI_SOCKS_PROXY";
+    public static final String MIDSCENE_OPENAI_HTTP_PROXY = "MIDSCENE_OPENAI_HTTP_PROXY";
+    public static final String OPENAI_API_KEY = "OPENAI_API_KEY";
+    public static final String OPENAI_BASE_URL = "OPENAI_BASE_URL";
+    public static final String OPENAI_MAX_TOKENS = "OPENAI_MAX_TOKENS";
+    public static final String MIDSCENE_API_TYPE = "MIDSCENE-API-TYPE";
+    public static final String MIDSCENE_OPENAI_BASE_URL = "MIDSCENE_OPENAI_BASE_URL";
+    public static final String MIDSCENE_OPENAI_API_KEY = "MIDSCENE_OPENAI_API_KEY";
+    public static final String MIDSCENE_OPENAI_USE_AZURE = "MIDSCENE_OPENAI_USE_AZURE";
+    public static final String MIDSCENE_USE_AZURE_OPENAI = "MIDSCENE_USE_AZURE_OPENAI";
+    public static final String MIDSCENE_AZURE_OPENAI_SCOPE = "MIDSCENE_AZURE_OPENAI_SCOPE";
+    public static final String MIDSCENE_AZURE_OPENAI_INIT_CONFIG_JSON = "MIDSCENE_AZURE_OPENAI_INIT_CONFIG_JSON";
+    public static final String MIDSCENE_USE_ANTHROPIC_SDK = "MIDSCENE_USE_ANTHROPIC_SDK";
+    public static final String ANTHROPIC_API_KEY = "ANTHROPIC_API_KEY";
+    public static final String MIDSCENE_OPENAI_USE_AZURE_LEGACY = "OPENAI_USE_AZURE";
+    public static final String AZURE_OPENAI_ENDPOINT = "AZURE_OPENAI_ENDPOINT";
+    public static final String AZURE_OPENAI_KEY = "AZURE_OPENAI_KEY";
+    public static final String AZURE_OPENAI_API_VERSION = "AZURE_OPENAI_API_VERSION";
+    public static final String AZURE_OPENAI_DEPLOYMENT = "AZURE_OPENAI_DEPLOYMENT";
+    public static final String MIDSCENE_OPENAI_SOCKS_PROXY_VQA = "MIDSCENE_VQA_OPENAI_SOCKS_PROXY";
+    public static final String MIDSCENE_OPENAI_HTTP_PROXY_VQA = "MIDSCENE_VQA_OPENAI_HTTP_PROXY";
+    public static final String MIDSCENE_OPENAI_BASE_URL_VQA = "MIDSCENE_VQA_OPENAI_BASE_URL";
+    public static final String MIDSCENE_OPENAI_API_KEY_VQA = "MIDSCENE_VQA_OPENAI_API_KEY";
+    public static final String MIDSCENE_OPENAI_INIT_CONFIG_JSON_VQA = "MIDSCENE_VQA_OPENAI_INIT_CONFIG_JSON";
+    public static final String MIDSCENE_OPENAI_USE_AZURE_VQA = "MIDSCENE_VQA_OPENAI_USE_AZURE";
+    public static final String MIDSCENE_USE_AZURE_OPENAI_VQA = "MIDSCENE_VQA_USE_AZURE_OPENAI";
+    public static final String MIDSCENE_AZURE_OPENAI_SCOPE_VQA = "MIDSCENE_VQA_AZURE_OPENAI_SCOPE";
+    public static final String MIDSCENE_AZURE_OPENAI_KEY_VQA = "MIDSCENE_VQA_AZURE_OPENAI_KEY";
+    public static final String MIDSCENE_AZURE_OPENAI_ENDPOINT_VQA = "MIDSCENE_VQA_AZURE_OPENAI_ENDPOINT";
+    public static final String MIDSCENE_AZURE_OPENAI_API_VERSION_VQA = "MIDSCENE_VQA_AZURE_OPENAI_API_VERSION";
+    public static final String MIDSCENE_AZURE_OPENAI_DEPLOYMENT_VQA = "MIDSCENE_VQA_AZURE_OPENAI_DEPLOYMENT";
+    public static final String MIDSCENE_AZURE_OPENAI_INIT_CONFIG_JSON_VQA = "MIDSCENE_VQA_AZURE_OPENAI_INIT_CONFIG_JSON";
+    public static final String MIDSCENE_USE_ANTHROPIC_SDK_VQA = "MIDSCENE_VQA_USE_ANTHROPIC_SDK";
+    public static final String MIDSCENE_ANTHROPIC_API_KEY_VQA = "MIDSCENE_VQA_ANTHROPIC_API_KEY";
+    public static final String MIDSCENE_VQA_MODEL_NAME = "MIDSCENE_VQA_MODEL_NAME";
+    public static final String MIDSCENE_VQA_VL_MODE = "MIDSCENE_VQA_VL_MODE";
+    public static final String MIDSCENE_PLANNING_MODEL_NAME = "MIDSCENE_PLANNING_MODEL_NAME";
+    public static final String MIDSCENE_PLANNING_OPENAI_SOCKS_PROXY = "MIDSCENE_PLANNING_OPENAI_SOCKS_PROXY";
+    public static final String MIDSCENE_PLANNING_OPENAI_HTTP_PROXY = "MIDSCENE_PLANNING_OPENAI_HTTP_PROXY";
+    public static final String MIDSCENE_PLANNING_OPENAI_BASE_URL = "MIDSCENE_PLANNING_OPENAI_BASE_URL";
+    public static final String MIDSCENE_PLANNING_OPENAI_API_KEY = "MIDSCENE_PLANNING_OPENAI_API_KEY";
+    public static final String MIDSCENE_PLANNING_OPENAI_INIT_CONFIG_JSON = "MIDSCENE_PLANNING_OPENAI_INIT_CONFIG_JSON";
+    public static final String MIDSCENE_PLANNING_OPENAI_USE_AZURE = "MIDSCENE_PLANNING_OPENAI_USE_AZURE";
+    public static final String MIDSCENE_PLANNING_USE_AZURE_OPENAI = "MIDSCENE_PLANNING_USE_AZURE_OPENAI";
+    public static final String MIDSCENE_PLANNING_AZURE_OPENAI_SCOPE = "MIDSCENE_PLANNING_AZURE_OPENAI_SCOPE";
+    public static final String MIDSCENE_PLANNING_AZURE_OPENAI_KEY = "MIDSCENE_PLANNING_AZURE_OPENAI_KEY";
+    public static final String MIDSCENE_PLANNING_AZURE_OPENAI_ENDPOINT = "MIDSCENE_PLANNING_AZURE_OPENAI_ENDPOINT";
+    public static final String MIDSCENE_PLANNING_AZURE_OPENAI_API_VERSION = "MIDSCENE_PLANNING_AZURE_OPENAI_API_VERSION";
+    public static final String MIDSCENE_PLANNING_AZURE_OPENAI_DEPLOYMENT = "MIDSCENE_PLANNING_AZURE_OPENAI_DEPLOYMENT";
+    public static final String MIDSCENE_PLANNING_AZURE_OPENAI_INIT_CONFIG_JSON = "MIDSCENE_PLANNING_AZURE_OPENAI_INIT_CONFIG_JSON";
+    public static final String MIDSCENE_PLANNING_USE_ANTHROPIC_SDK = "MIDSCENE_PLANNING_USE_ANTHROPIC_SDK";
+    public static final String MIDSCENE_PLANNING_ANTHROPIC_API_KEY = "MIDSCENE_PLANNING_ANTHROPIC_API_KEY";
+    public static final String MIDSCENE_PLANNING_VL_MODE = "MIDSCENE_PLANNING_VL_MODE";
+    public static final String MIDSCENE_GROUNDING_MODEL_NAME = "MIDSCENE_GROUNDING_MODEL_NAME";
+    public static final String MIDSCENE_GROUNDING_OPENAI_SOCKS_PROXY = "MIDSCENE_GROUNDING_OPENAI_SOCKS_PROXY";
+    public static final String MIDSCENE_GROUNDING_OPENAI_HTTP_PROXY = "MIDSCENE_GROUNDING_OPENAI_HTTP_PROXY";
+    public static final String MIDSCENE_GROUNDING_OPENAI_BASE_URL = "MIDSCENE_GROUNDING_OPENAI_BASE_URL";
+    public static final String MIDSCENE_GROUNDING_OPENAI_API_KEY = "MIDSCENE_GROUNDING_OPENAI_API_KEY";
+    public static final String MIDSCENE_GROUNDING_OPENAI_INIT_CONFIG_JSON = "MIDSCENE_GROUNDING_OPENAI_INIT_CONFIG_JSON";
+    public static final String MIDSCENE_GROUNDING_OPENAI_USE_AZURE = "MIDSCENE_GROUNDING_OPENAI_USE_AZURE";
+    public static final String MIDSCENE_GROUNDING_USE_AZURE_OPENAI = "MIDSCENE_GROUNDING_USE_AZURE_OPENAI";
+    public static final String MIDSCENE_GROUNDING_AZURE_OPENAI_SCOPE = "MIDSCENE_GROUNDING_AZURE_OPENAI_SCOPE";
+    public static final String MIDSCENE_GROUNDING_AZURE_OPENAI_KEY = "MIDSCENE_GROUNDING_AZURE_OPENAI_KEY";
+    public static final String MIDSCENE_GROUNDING_AZURE_OPENAI_ENDPOINT = "MIDSCENE_GROUNDING_AZURE_OPENAI_ENDPOINT";
+    public static final String MIDSCENE_GROUNDING_AZURE_OPENAI_API_VERSION = "MIDSCENE_GROUNDING_AZURE_OPENAI_API_VERSION";
+    public static final String MIDSCENE_GROUNDING_AZURE_OPENAI_DEPLOYMENT = "MIDSCENE_GROUNDING_AZURE_OPENAI_DEPLOYMENT";
+    public static final String MIDSCENE_GROUNDING_AZURE_OPENAI_INIT_CONFIG_JSON = "MIDSCENE_GROUNDING_AZURE_OPENAI_INIT_CONFIG_JSON";
+    public static final String MIDSCENE_GROUNDING_USE_ANTHROPIC_SDK = "MIDSCENE_GROUNDING_USE_ANTHROPIC_SDK";
+    public static final String MIDSCENE_GROUNDING_ANTHROPIC_API_KEY = "MIDSCENE_GROUNDING_ANTHROPIC_API_KEY";
+    public static final String MIDSCENE_GROUNDING_VL_MODE = "MIDSCENE_GROUNDING_VL_MODE";
+    public static final String MIDSCENE_VL_MODE = "MIDSCENE_VL_MODE";
+    public static final String MIDSCENE_USE_VLM_UI_TARS = "MIDSCENE_USE_VLM_UI_TARS";
+    public static final String MIDSCENE_USE_QWEN_VL = "MIDSCENE_USE_QWEN_VL";
+    public static final String MIDSCENE_USE_QWEN3_VL = "MIDSCENE_USE_QWEN3_VL";
+    public static final String MIDSCENE_USE_DOUBAO_VISION = "MIDSCENE_USE_DOUBAO_VISION";
+    public static final String MIDSCENE_USE_GEMINI = "MIDSCENE_USE_GEMINI";
+    public static final String MIDSCENE_USE_VL_MODEL = "MIDSCENE_USE_VL_MODEL";
+    public static final String MATCH_BY_POSITION = "MATCH_BY_POSITION";
+    public static final String MIDSCENE_AZURE_OPENAI_ENDPOINT = "MIDSCENE_AZURE_OPENAI_ENDPOINT";
+    public static final String MIDSCENE_AZURE_OPENAI_KEY = "MIDSCENE_AZURE_OPENAI_KEY";
+    public static final String MIDSCENE_AZURE_OPENAI_API_VERSION = "MIDSCENE_AZURE_OPENAI_API_VERSION";
+    public static final String MIDSCENE_AZURE_OPENAI_DEPLOYMENT = "MIDSCENE_AZURE_OPENAI_DEPLOYMENT";
+    public static final String MIDSCENE_ANTHROPIC_API_KEY = "MIDSCENE_ANTHROPIC_API_KEY";
+
+    private static final List<String> UNUSED_ENV_KEYS = List.of(MIDSCENE_DANGEROUSLY_PRINT_ALL_CONFIG);
+
+    private static final List<String> BASIC_ENV_KEYS = List.of(
+            MIDSCENE_DEBUG_MODE,
+            MIDSCENE_DEBUG_AI_PROFILE,
+            MIDSCENE_DEBUG_AI_RESPONSE,
+            MIDSCENE_RUN_DIR
+    );
+
+    private static final List<String> BOOLEAN_ENV_KEYS = List.of(
+            MIDSCENE_CACHE,
+            MIDSCENE_LANGSMITH_DEBUG,
+            MIDSCENE_FORCE_DEEP_THINK,
+            MIDSCENE_MCP_USE_PUPPETEER_MODE,
+            MIDSCENE_MCP_ANDROID_MODE
+    );
+
+    private static final List<String> NUMBER_ENV_KEYS = List.of(
+            MIDSCENE_CACHE_MAX_FILENAME_LENGTH,
+            MIDSCENE_REPLANNING_CYCLE_LIMIT
+    );
+
+    private static final List<String> STRING_ENV_KEYS = List.of(
+            OPENAI_MAX_TOKENS,
+            MIDSCENE_ADB_PATH,
+            MIDSCENE_ADB_REMOTE_HOST,
+            MIDSCENE_ADB_REMOTE_PORT,
+            MIDSCENE_ANDROID_IME_STRATEGY,
+            MIDSCENE_IOS_DEVICE_UDID,
+            MIDSCENE_IOS_SIMULATOR_UDID,
+            MIDSCENE_REPORT_TAG_NAME,
+            MIDSCENE_PREFERRED_LANGUAGE,
+            MATCH_BY_POSITION,
+            MIDSCENE_MCP_CHROME_PATH,
+            DOCKER_CONTAINER
+    );
+
+    private static final List<String> GLOBAL_ENV_KEYS = combine(
+            BOOLEAN_ENV_KEYS,
+            NUMBER_ENV_KEYS,
+            STRING_ENV_KEYS
+    );
+
+    private static final List<String> MODEL_ENV_KEYS = List.of(
+            MIDSCENE_MODEL_NAME,
+            MIDSCENE_OPENAI_INIT_CONFIG_JSON,
+            MIDSCENE_OPENAI_API_KEY,
+            MIDSCENE_OPENAI_BASE_URL,
+            MIDSCENE_OPENAI_USE_AZURE,
+            MIDSCENE_OPENAI_SOCKS_PROXY,
+            MIDSCENE_OPENAI_HTTP_PROXY,
+            MIDSCENE_USE_AZURE_OPENAI,
+            MIDSCENE_AZURE_OPENAI_SCOPE,
+            MIDSCENE_AZURE_OPENAI_INIT_CONFIG_JSON,
+            MIDSCENE_USE_ANTHROPIC_SDK,
+            MIDSCENE_USE_VLM_UI_TARS,
+            MIDSCENE_USE_QWEN_VL,
+            MIDSCENE_USE_QWEN3_VL,
+            MIDSCENE_USE_DOUBAO_VISION,
+            MIDSCENE_USE_GEMINI,
+            MIDSCENE_USE_VL_MODEL,
+            ANTHROPIC_API_KEY,
+            MIDSCENE_AZURE_OPENAI_ENDPOINT,
+            MIDSCENE_AZURE_OPENAI_KEY,
+            MIDSCENE_AZURE_OPENAI_API_VERSION,
+            MIDSCENE_AZURE_OPENAI_DEPLOYMENT,
+            MIDSCENE_VL_MODE,
+            OPENAI_API_KEY,
+            OPENAI_BASE_URL,
+            MIDSCENE_OPENAI_USE_AZURE_LEGACY,
+            AZURE_OPENAI_ENDPOINT,
+            AZURE_OPENAI_KEY,
+            AZURE_OPENAI_API_VERSION,
+            AZURE_OPENAI_DEPLOYMENT,
+            MIDSCENE_VQA_MODEL_NAME,
+            MIDSCENE_OPENAI_SOCKS_PROXY_VQA,
+            MIDSCENE_OPENAI_HTTP_PROXY_VQA,
+            MIDSCENE_OPENAI_BASE_URL_VQA,
+            MIDSCENE_OPENAI_API_KEY_VQA,
+            MIDSCENE_OPENAI_INIT_CONFIG_JSON_VQA,
+            MIDSCENE_OPENAI_USE_AZURE_VQA,
+            MIDSCENE_USE_AZURE_OPENAI_VQA,
+            MIDSCENE_AZURE_OPENAI_SCOPE_VQA,
+            MIDSCENE_AZURE_OPENAI_KEY_VQA,
+            MIDSCENE_AZURE_OPENAI_ENDPOINT_VQA,
+            MIDSCENE_AZURE_OPENAI_API_VERSION_VQA,
+            MIDSCENE_AZURE_OPENAI_DEPLOYMENT_VQA,
+            MIDSCENE_AZURE_OPENAI_INIT_CONFIG_JSON_VQA,
+            MIDSCENE_USE_ANTHROPIC_SDK_VQA,
+            MIDSCENE_ANTHROPIC_API_KEY_VQA,
+            MIDSCENE_VQA_VL_MODE,
+            MIDSCENE_PLANNING_MODEL_NAME,
+            MIDSCENE_PLANNING_OPENAI_SOCKS_PROXY,
+            MIDSCENE_PLANNING_OPENAI_HTTP_PROXY,
+            MIDSCENE_PLANNING_OPENAI_BASE_URL,
+            MIDSCENE_PLANNING_OPENAI_API_KEY,
+            MIDSCENE_PLANNING_OPENAI_INIT_CONFIG_JSON,
+            MIDSCENE_PLANNING_OPENAI_USE_AZURE,
+            MIDSCENE_PLANNING_USE_AZURE_OPENAI,
+            MIDSCENE_PLANNING_AZURE_OPENAI_SCOPE,
+            MIDSCENE_PLANNING_AZURE_OPENAI_KEY,
+            MIDSCENE_PLANNING_AZURE_OPENAI_ENDPOINT,
+            MIDSCENE_PLANNING_AZURE_OPENAI_API_VERSION,
+            MIDSCENE_PLANNING_AZURE_OPENAI_DEPLOYMENT,
+            MIDSCENE_PLANNING_AZURE_OPENAI_INIT_CONFIG_JSON,
+            MIDSCENE_PLANNING_USE_ANTHROPIC_SDK,
+            MIDSCENE_PLANNING_ANTHROPIC_API_KEY,
+            MIDSCENE_PLANNING_VL_MODE,
+            MIDSCENE_GROUNDING_MODEL_NAME,
+            MIDSCENE_GROUNDING_OPENAI_SOCKS_PROXY,
+            MIDSCENE_GROUNDING_OPENAI_HTTP_PROXY,
+            MIDSCENE_GROUNDING_OPENAI_BASE_URL,
+            MIDSCENE_GROUNDING_OPENAI_API_KEY,
+            MIDSCENE_GROUNDING_OPENAI_INIT_CONFIG_JSON,
+            MIDSCENE_GROUNDING_OPENAI_USE_AZURE,
+            MIDSCENE_GROUNDING_USE_AZURE_OPENAI,
+            MIDSCENE_GROUNDING_AZURE_OPENAI_SCOPE,
+            MIDSCENE_GROUNDING_AZURE_OPENAI_KEY,
+            MIDSCENE_GROUNDING_AZURE_OPENAI_ENDPOINT,
+            MIDSCENE_GROUNDING_AZURE_OPENAI_API_VERSION,
+            MIDSCENE_GROUNDING_AZURE_OPENAI_DEPLOYMENT,
+            MIDSCENE_GROUNDING_AZURE_OPENAI_INIT_CONFIG_JSON,
+            MIDSCENE_GROUNDING_USE_ANTHROPIC_SDK,
+            MIDSCENE_GROUNDING_ANTHROPIC_API_KEY,
+            MIDSCENE_GROUNDING_VL_MODE
+    );
+
+    private static final Set<String> ALL_ENV_KEYS = toLinkedHashSet(
+            combine(
+                    UNUSED_ENV_KEYS,
+                    BASIC_ENV_KEYS,
+                    GLOBAL_ENV_KEYS,
+                    MODEL_ENV_KEYS
+            )
+    );
+
+    public static List<String> basicEnvKeys() {
+        return BASIC_ENV_KEYS;
+    }
+
+    public static boolean isBasicKey(String key) {
+        return BASIC_ENV_KEYS.contains(key);
+    }
+
+    public static List<String> unusedEnvKeys() {
+        return UNUSED_ENV_KEYS;
+    }
+
+    public static List<String> booleanEnvKeys() {
+        return BOOLEAN_ENV_KEYS;
+    }
+
+    public static boolean isBooleanKey(String key) {
+        return BOOLEAN_ENV_KEYS.contains(key);
+    }
+
+    public static List<String> numberEnvKeys() {
+        return NUMBER_ENV_KEYS;
+    }
+
+    public static List<String> stringEnvKeys() {
+        return STRING_ENV_KEYS;
+    }
+
+    public static List<String> globalEnvKeys() {
+        return GLOBAL_ENV_KEYS;
+    }
+
+    public static List<String> modelEnvKeys() {
+        return MODEL_ENV_KEYS;
+    }
+
+    public static Set<String> allEnvKeys() {
+        return ALL_ENV_KEYS;
+    }
+
+    private static List<String> combine(List<String>... groups) {
+        LinkedHashSet<String> merged = new LinkedHashSet<>();
+        for (List<String> group : groups) {
+            merged.addAll(group);
+        }
+        return List.copyOf(merged);
+    }
+
+    private static Set<String> toLinkedHashSet(List<String> source) {
+        LinkedHashSet<String> set = new LinkedHashSet<>(source);
+        return java.util.Collections.unmodifiableSet(set);
+    }
+}

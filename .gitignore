@@ -109,6 +109,8 @@ midscene_run
 midscene_run/report
 midscene_run/dump
 
+midscene-shared/target/
+
 *.ignore.png
 extension_output
 .cursor
